@@ -1,4 +1,4 @@
-/* Importing Different Modules */
+// modules
 
 const {globalVariables} = require('./config/configuration');
 
@@ -17,7 +17,7 @@ const fileUpload = require('express-fileupload');
 const app = express();
 
 
-// Configure Mongoose to Connect to MongoDB
+// connect mongoose to mongodb
 mongoose.connect(mongoDbUrl, { useNewUrlParser: true })
     .then(response => {
         console.log("MongoDB Connected Successfully.");
@@ -27,13 +27,14 @@ mongoose.connect(mongoDbUrl, { useNewUrlParser: true })
 
 
 
-/* Configure express*/
+// configure express
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-/*  Flash and Session*/
+// flash and session
+
 app.use(session({
     secret: 'anysecret',
     saveUninitialized: true,
