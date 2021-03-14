@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const hbs = require('express-handlebars');
-const {mongodbUrl} = require('./config/configuration');
+const {mongodbUrl} = require('./config/config');
 const app = express();
 
 mongoose.connect(mongodbUrl, {useUnifiedTopology: true, useNewUrlParser: true})
