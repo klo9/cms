@@ -2,10 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const hbs = require('express-handlebars');
-
+const {mongodbUrl} = require('./config/configuration');
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/cms', {useUnifiedTopology: true, useNewUrlParser: true})
+mongoose.connect(mongodbUrl, {useUnifiedTopology: true, useNewUrlParser: true})
     .then( res => {
         console.log('mongodb connected successfully')
     })
