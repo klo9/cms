@@ -27,8 +27,7 @@ app.engine('hbs', hbs({
 app.set('view engine', 'hbs');
 
 // routes
-app.use('/', (req, res) => {
-    res.render('default/index') // body
-})
+const defaultRoutes = require('./routes/defaultRoutes');
+app.use('/', defaultRoutes);
 
 app.listen(PORT);
