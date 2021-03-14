@@ -23,11 +23,12 @@ app.engine('hbs', hbs({
     defaultLayout: 'default',
     extname: '.hbs'
 }));
-app.set('view engine', 'handlebars');
+
+app.set('view engine', 'hbs');
 
 // routes
 app.use('/', (req, res) => {
-    res.send('hello');
+    res.render('default/index')
 })
 
 app.listen(8080);
