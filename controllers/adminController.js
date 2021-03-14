@@ -14,7 +14,7 @@ module.exports = {
 
 
     getPosts: (req, res) => {
-        Post.find()
+        Post.find().lean()
             .populate('category')
             .then(posts => {
                 res.render('admin/posts/index', {posts: posts});
@@ -23,7 +23,7 @@ module.exports = {
 
 
     createPostsGet: (req, res) => {
-        Category.find().then(cats => {
+        Category.find().lean().then(cats => {
 
             res.render('admin/posts/create', {categories: cats});
         });
@@ -71,6 +71,7 @@ module.exports = {
         const id = req.params.id;
 
         Post.findById(id)
+            .lean()
             .then(post => {
 
                 Category.find().then(cats => {

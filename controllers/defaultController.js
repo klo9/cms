@@ -5,8 +5,8 @@ module.exports = {
   
     index:  async (req, res) => {
         
-        const posts = await Post.find();
-        const categories = await Category.find();
+        const posts = await Post.find().lean();
+        const categories = await Category.find().lean();
         
         res.render('default/index', {posts: posts, categories: categories});
     },
