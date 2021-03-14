@@ -74,7 +74,7 @@ module.exports = {
             .lean()
             .then(post => {
 
-                Category.find().then(cats => {
+                Category.find().lean().then(cats => {
                     res.render('admin/posts/edit', {post: post, categories: cats});
                 });
 
@@ -103,6 +103,9 @@ module.exports = {
                     res.redirect('/admin/posts');
 
                 });
+            })
+            .catch((err) => {
+                res.redirect('/');
             });
 
     },
