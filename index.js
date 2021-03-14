@@ -28,6 +28,9 @@ app.set('view engine', 'hbs');
 
 // routes
 const defaultRoutes = require('./routes/defaultRoutes');
+const adminRoutes = require('./routes/adminRoutes');
+
 app.use('/', defaultRoutes);
+app.use('/admin', adminRoutes)
 
 app.listen(PORT);

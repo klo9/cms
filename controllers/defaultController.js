@@ -2,7 +2,16 @@ module.exports = {
     index: (req, res) => {
         res.render('default/index')
     },
-    login: (req, res) => {
-        res.send('login page')
+    loginGet: (req, res) => {
+        res.render('default/login')
+    },
+    loginPost: (req, res) => {
+        res.send('yay')
+    },
+    registerGet: (req, res) => {
+        res.render('default/register');
+    },
+    registerPost: (req, res) => {
+        res.send('successful')
     }
 }
