@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const hbs = require('express-handlebars');
-const {mongodbUrl} = require('./config/config');
+const {mongodbUrl, PORT} = require('./config/config');
 const app = express();
 
 mongoose.connect(mongodbUrl, {useUnifiedTopology: true, useNewUrlParser: true})
@@ -28,7 +28,7 @@ app.set('view engine', 'hbs');
 
 // routes
 app.use('/', (req, res) => {
-    res.render('default/index')
+    res.render('default/index') // body
 })
 
-app.listen(8080);
+app.listen(PORT);
