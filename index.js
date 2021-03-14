@@ -19,7 +19,11 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // view engine
-
+app.engine('hbs', hbs({
+    defaultLayout: 'default',
+    extname: '.hbs'
+}));
+app.set('view engine', 'handlebars');
 
 // routes
 app.use('/', (req, res) => {
