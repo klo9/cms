@@ -1,0 +1,19 @@
+{
+  "name": "cms",
+  "version": "1.0.0",
+  "description": "basic cms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klo9/cms.git"
+  },
+  "author": "klo9",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klo9/cms/issues"
+  },
+  "homepage": "https://github.com/klo9/cms#readme"
+}
