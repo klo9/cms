@@ -44,23 +44,26 @@ app.use(session({
 app.use(flash());
 
 
-/* Use Global Variables */
+// global variables from config
 app.use(globalVariables);
 
 
-/* File Upload Middleware*/
+// file upload middleware
 app.use(fileUpload());
 
-/* Setup View Engine To Use Handlebars */
-app.engine('handlebars', hbs({defaultLayout: 'default', helpers: {select: selectOption}}));
+// handlebars view engine
+app.engine('handlebars', hbs({
+    defaultLayout: 'default', 
+    helpers: {select: selectOption}
+}));
 app.set('view engine' , 'handlebars');
 
 
-/* Method Override Middleware*/
+// method override middleware
 app.use(methodOverride('newMethod'));
 
 
-/* Routes */
+// routes
 const defaultRoutes = require('./routes/defaultRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 
@@ -68,7 +71,7 @@ app.use('/', defaultRoutes);
 app.use('/admin', adminRoutes);
 
 
-/* Start The Server */
+// start server
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
