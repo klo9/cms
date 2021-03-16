@@ -37,9 +37,12 @@ module.exports = {
 
     postGet: async (req, res) => {
         const {urlPathConfig} = req.params;
-        const posts = await Post.findOne({urlPathConfig: urlPathConfig}).lean();
-        const categories = await Category.find().lean();
-
-        res.render('default/posts/post', {posts: posts, categories: categories});        
+        await Post.findOne({urlPathConfig: urlPathConfig}).lean().then( post => {
+            if(!post) {
+                res.status(404).json({message: 'No Post Found'});
+            } else {
+                res.render('default/posts/post', {post: post});        
+            }
+        });        
     }
 };
