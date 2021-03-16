@@ -36,7 +36,8 @@ module.exports = {
     },
 
     postGet: async (req, res) => {
-        const posts = await Post.find().lean();
+        const {urlPathConfig} = req.params;
+        const posts = await Post.findOne({urlPathConfig: urlPathConfig}).lean();
         const categories = await Category.find().lean();
 
         res.render('default/posts/post', {posts: posts, categories: categories});        

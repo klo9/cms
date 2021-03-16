@@ -1,1 +1,40 @@
-<h1>hello</h1>
+<div id="hero-blog" class="hero">
+</div>
+
+<main id="main">        
+
+    <article id="article">
+        
+        <div id="article-header">
+
+            <h1>{{posts.title}}</h1>
+
+            <ul id="social-icons">
+                {{!-- <li><img src="media/Facebook.svg" alt="like us on Facebook!" id="facebook-icon"></li> --}}
+                {{!-- <li><img src="media/Twitter.svg" alt="follow us on Twitter!" id="twitter-icon"></li> --}}
+            </ul>
+
+            <p id="date-posted">{{posts.creationDate}}</p>
+                
+        </div>
+        
+        <hr id="title-bar"> <!--horizontal line-->
+
+        <div id="article-desc">{{ posts.description }}</div>
+
+        <article id="article-body">
+
+            {{#each posts.article}}
+            <h2>{{subheader}}</h2>
+            
+            {{#each paragraphs}}
+            <p>{{this}}</p>
+            {{/each}}
+            
+            {{/each}}
+
+        </article>
+
+    </article>
+
+</main>
