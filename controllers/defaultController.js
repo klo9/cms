@@ -33,5 +33,12 @@ module.exports = {
         const categories = await Category.find().lean();
 
         res.render('default/posts/index', {posts: posts, categories: categories});
+    },
+
+    postGet: async (req, res) => {
+        const posts = await Post.find().lean();
+        const categories = await Category.find().lean();
+
+        res.render('default/posts/post', {posts: posts, categories: categories});        
     }
 };
