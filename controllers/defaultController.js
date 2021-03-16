@@ -27,7 +27,11 @@ module.exports = {
         res.send("Successfully Registered.");
     },
     
-    allPostsGet: (req, res) => {
-        res.render('default/posts/index');
+    allPostsGet: async (req, res) => {
+
+        const posts = await Post.find().lean();
+        const categories = await Category.find().lean();
+
+        res.render('default/posts/index', {posts: posts, categories: categories});
     }
 };

@@ -13,6 +13,12 @@ const PostSchema = new Schema({
         default: 'public'
     },
     
+    urlPathConfig: {
+        type: String,
+        // update... function to turn space-sep string into lowercase hyphen-sep string
+        default: this.title
+    },
+
     description: {
         type: String,
         required: true

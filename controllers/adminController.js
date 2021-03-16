@@ -10,7 +10,7 @@ module.exports = {
     },
 
 
-    /* ADMIN POSTS ENDPOINTS */
+    // admin posts endpoints
 
 
     getPosts: (req, res) => {
@@ -47,12 +47,13 @@ module.exports = {
                if (err)
                    throw err;
            });
-       }
+        }
         
         const newPost = new Post({
             title: req.body.title,
             description: req.body.description,
             status: req.body.status,
+            urlPathConfig: req.body.urlPathConfig,
             allowComments: commentsAllowed,
             category: req.body.category,
             file: `/uploads/${filename}`
@@ -93,6 +94,7 @@ module.exports = {
 
                 post.title = req.body.title;
                 post.status = req.body.status;
+                post.urlPathConfig = req.body.urlPathConfig;
                 post.allowComments = req.body.allowComments;
                 post.description = req.body.description;
                 post.category = req.body.category;
@@ -120,7 +122,8 @@ module.exports = {
     },
 
 
-    /* ALL CATEGORY METHODS*/
+    // for categories
+
     getCategories: (req, res) => {
 
         Category.find().then(cats => {
