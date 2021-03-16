@@ -25,6 +25,9 @@ module.exports = {
     
     registerPost: (req, res ) => {
         res.send("Successfully Registered.");
-    }
+    },
     
+    allPostsGet: (req, res) => {
+        res.render('default/posts/index');
+    }
 };

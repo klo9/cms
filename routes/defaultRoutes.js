@@ -25,4 +25,7 @@ router.route('/register')
     .get(defaultController.registerGet)
     .post(defaultController.registerPost);
 
+router.route('/posts')
+    .get(defaultController.allPostsGet)
+
 module.exports = router;
