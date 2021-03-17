@@ -70,6 +70,10 @@ const adminRoutes = require('./routes/adminRoutes');
 app.use('/', defaultRoutes);
 app.use('/admin', adminRoutes);
 
+// 404
+app.use((req, res) => {
+    res.status(404).render('default/404', { title: '404 not found' } );
+});
 
 // start server
 app.listen(PORT, () => {
