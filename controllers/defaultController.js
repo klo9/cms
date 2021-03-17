@@ -17,8 +17,16 @@ module.exports = {
         res.render('default/login');
     },
     
-    loginPost: (req, res) => {
-      res.send("Congratulations, you've successfully submitted the data.");  
+    loginPost: async (req, res) => {
+        const { username, password } = req.body;
+        const user = await User.findOne({ username });
+
+        const validLogin = await bcrypt.compare(password, user.password);
+        if(validLogin){
+            res.send('validated');
+        } else {
+            res.send('failed');
+        }
     },
     
     registerGet: (req, res) => {
