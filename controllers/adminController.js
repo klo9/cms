@@ -178,8 +178,11 @@ module.exports = {
 
             });
         }
+    },
+
+    logoutRoute: (req, res) => {
+        req.session.user_id = null;
+        res.redirect('/login');
     }
-
-
 };    
     

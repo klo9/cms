@@ -52,5 +52,11 @@ router.route('/category/edit/:id')
     .post(adminController.editCategoriesPostRoute);
 
 
+// logout route
+
+router.route('/logout')
+    .post(adminController.logoutRoute);
+    // .post(adminController.logoutRoute);
+
 module.exports = router;
 
