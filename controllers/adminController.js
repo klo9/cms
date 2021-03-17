@@ -125,7 +125,7 @@ module.exports = {
 
     getCategories: (req, res) => {
 
-        Category.find().then(cats => {
+        Category.find().lean().then(cats => {
             res.render('admin/category/index', {categories: cats});
         });
     },
@@ -148,7 +148,7 @@ module.exports = {
     editCategoriesGetRoute: async (req, res) => {
         const catId = req.params.id;
 
-        const cats = await Category.find();
+        const cats = await Category.find().lean();
 
 
         Category.findById(catId).then(cat => {
