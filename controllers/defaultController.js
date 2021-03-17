@@ -2,6 +2,7 @@ const Post = require('../models/PostModel').Post;
 const Category = require('../models/CategoryModel').Category;
 const User = require('../models/UserModel').User;
 const bcrypt = require('bcrypt');
+const session = require('express-session');
 
 module.exports = {
   
@@ -21,12 +22,18 @@ module.exports = {
         const { username, password } = req.body;
         const user = await User.findOne({ username });
 
-        const validLogin = await bcrypt.compare(password, user.password);
-        if(validLogin){
-            res.send('validated');
-        } else {
-            res.send('failed');
+        // if username doesn't exist
+        if(!user) {
+            res.redirect('/login');
+            return false;
         }
+
+        // validate pw
+        await bcrypt.compare(password, user.password)
+        .then(() => {
+            req.session.user_id = user._id;
+            res.redirect('/admin');
+        })
     },
     
     registerGet: (req, res) => {
@@ -45,7 +52,8 @@ module.exports = {
         })
         await user.save()
             .then(() => {
-                res.redirect('/');
+                req.session.user_id = user._id;
+                res.redirect('/admin');
             })
             .catch((err) => {
                 console.log(err);
