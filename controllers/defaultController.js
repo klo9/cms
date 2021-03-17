@@ -1,5 +1,7 @@
 const Post = require('../models/PostModel').Post;
 const Category = require('../models/CategoryModel').Category;
+const User = require('../models/UserModel').User;
+const bcrypt = require('bcrypt');
 
 module.exports = {
   
@@ -23,8 +25,25 @@ module.exports = {
         res.render('default/register');
     },
     
-    registerPost: (req, res ) => {
-        res.send("Successfully Registered.");
+    registerPost: async (req, res ) => {
+        const { firstName, lastName, email, username, password } = req.body;
+        const hash = await bcrypt.hash(password, 12);
+        const user = new User({
+            firstName,
+            lastName,
+            email,
+            username,
+            password: hash
+        })
+        await user.save()
+            .then(() => {
+                res.redirect('/');
+            })
+            .catch((err) => {
+                console.log(err);
+                return false;
+            })
+        
     },
     
     allPostsGet: async (req, res) => {

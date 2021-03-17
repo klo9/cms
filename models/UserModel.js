@@ -17,10 +17,15 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+
+    username: {
+        type: String,
+        required: [true, 'Username cannot be blank']
+    },
     
     password: {
         type: String,
-        required: true
+        required: [true, 'Password cannot be blank']
     }
 
 
