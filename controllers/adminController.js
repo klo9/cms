@@ -5,11 +5,7 @@ const {isEmpty} = require('../config/customFunctions');
 module.exports = {
 
     index: (req, res) => {
-        if(!req.session.user_id){   // user authorization
-            res.redirect('/');
-        } else {
             res.render('admin/index');
-        }
     },
 
 

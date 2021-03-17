@@ -9,5 +9,13 @@ module.exports = {
         res.locals.error_message = req.flash('error-message');        
         
         next();
+    },
+
+    // user auth middleware
+    requireLogin: (req, res, next) => {
+        if(!req.session.user_id) {
+            return res.redirect('/login')
+        }
+        next();
     }
 };

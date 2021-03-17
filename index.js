@@ -1,6 +1,7 @@
 // modules
 
 const {globalVariables} = require('./config/configuration');
+const {requireLogin} = require('./config/configuration');
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -68,7 +69,7 @@ const defaultRoutes = require('./routes/defaultRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 
 app.use('/', defaultRoutes);
-app.use('/admin', adminRoutes);
+app.use('/admin', requireLogin, adminRoutes);
 
 // 404
 app.use((req, res) => {
