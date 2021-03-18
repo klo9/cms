@@ -30,4 +30,17 @@ router.route('/posts')
 
 router.route('/posts/:urlPathConfig')
     .get(defaultController.postGet);
+
+
+// policies routing
+
+router.route('/privacypolicy')
+    .get(defaultController.privacyGet);
+
+router.route('/terms')
+    .get(defaultController.termsGet);
+
+router.route('/disclaimers')
+    .get(defaultController.disclaimersGet);
+
 module.exports = router;

@@ -79,5 +79,19 @@ module.exports = {
                 res.render('default/posts/post', {post: post});        
             }
         });        
+    },
+
+    // policies controllers
+    
+    privacyGet: (req, res) => {
+        res.render('default/policies/privacypolicy');
+    },
+
+    termsGet: (req, res) => {
+        res.render('default/policies/terms');
+    },
+
+    disclaimersGet: (req, res) => {
+        res.render('default/policies/disclaimers');
     }
 };
