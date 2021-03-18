@@ -10,13 +10,13 @@ router.all('/*', (req, res, next) => {
     next();
 });
 
-/* DEFAULT ADMIN INDEX ROUTE*/
+// admin default index
 
 router.route('/')
     .get(adminController.index);
 
 
-/* VARIOUS ADMIN POST ENDPOINTS */
+// admin post endpoints 
 
 router.route('/posts')
     .get(adminController.getPosts);
@@ -37,7 +37,8 @@ router.route('/posts/delete/:id')
     .delete(adminController.deletePost);
 
 
-/* ADMIN CATEGORY ROUTES*/
+
+// admin category endpoints
 
 router.route('/category')
     .get(adminController.getCategories);
@@ -51,6 +52,8 @@ router.route('/category/edit/:id')
     .get(adminController.editCategoriesGetRoute)
     .post(adminController.editCategoriesPostRoute);
 
+router.route('/category/delete/:id')
+    .delete(adminController.deleteCategory);
 
 // logout route
 

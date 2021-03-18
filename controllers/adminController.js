@@ -176,6 +176,15 @@ module.exports = {
         }
     },
 
+    deleteCategory: (req, res) => {
+        Category.findByIdAndDelete(req.params.id)
+            .then(deletedCat => {
+            req.flash('success-message', `The post ${deletedCat.title} has been deleted.`);
+            res.redirect('/admin/category');
+        });
+    },
+    // logout
+
     logoutRoute: (req, res) => {
         req.session.user_id = null;
         res.redirect('/login');
