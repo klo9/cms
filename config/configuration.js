@@ -17,5 +17,12 @@ module.exports = {
             return res.redirect('/login')
         }
         next();
+    },
+
+    checkLogin: (req, res, next) => {
+        if(req.session.user_id) {
+            res.locals.user = req.session.user_id;
+        }
+        next();
     }
 };

@@ -1,7 +1,6 @@
 // modules
 
-const {globalVariables} = require('./config/configuration');
-const {requireLogin} = require('./config/configuration');
+const {globalVariables, requireLogin, checkLogin} = require('./config/configuration');
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -38,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
     secret: 'anysecret',
-    saveUninitialized: true,
+    saveUninitialized: false,
     resave: true
 }));
 
@@ -68,7 +67,7 @@ app.use(methodOverride('newMethod'));
 const defaultRoutes = require('./routes/defaultRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 
-app.use('/', defaultRoutes);
+app.use('/', checkLogin, defaultRoutes);
 app.use('/admin', requireLogin, adminRoutes);
 
 // 404
