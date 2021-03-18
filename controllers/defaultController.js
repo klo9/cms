@@ -13,6 +13,10 @@ module.exports = {
         
         res.render('default/index', {posts: posts, categories: categories});
     },
+
+    about: (req, res) => {
+        res.render('default/about');
+    },
     
     loginGet: (req, res) => {
         res.render('default/login');
@@ -82,7 +86,7 @@ module.exports = {
     },
 
     // policies controllers
-    
+
     privacyGet: (req, res) => {
         res.render('default/policies/privacypolicy');
     },

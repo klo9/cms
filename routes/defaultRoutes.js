@@ -31,7 +31,8 @@ router.route('/posts')
 router.route('/posts/:urlPathConfig')
     .get(defaultController.postGet);
 
-
+router.route('/about')
+    .get(defaultController.about);
 // policies routing
 
 router.route('/privacypolicy')
