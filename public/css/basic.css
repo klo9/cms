@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    /* font-family: ; */
+}
+
+/* universal components */
+
+.container {
+    width: 65%;
+    padding: 5rem;
+}
+
+.button {
+    /* good for <a> too */
+
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    border: none;
+
+    text-decoration: none;
+    font-size: 1rem;
+
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+ul a {
+    color: black;
+    text-decoration: none;
+}
+
+ul a:hover {
+    color: gray;
+}
+
+/* ============ */
+/* default view */
+/* ============ */
+
+/* navigation */
+
+.df-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.df-nav ul,
+.df-nav-logo {
+    display: inherit;
+    flex-direction: inherit;
+    margin: auto;
+}
+
+.df-nav li,
+.df-footer li {
+    padding: 1rem;
+    font-weight: 800;
+}
+
+/* footer */
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: gray;
+}
+
+.df-footer {
+    background-color: black;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.df-footer-content {
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.df-footer-cr {
+    margin: auto;
+    padding: 2rem;
+}
