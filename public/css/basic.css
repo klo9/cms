@@ -62,8 +62,10 @@ ul a:hover {
 .form {
     display: flex;
     flex-direction: column;
+
     padding: 2rem;
     margin: 0 auto;
+    width: 50%;
 }
 
 .form-input {
@@ -72,9 +74,17 @@ ul a:hover {
     padding: 1rem;
 }
 
-/* .form-submit {
-    
-} */
+.form-pair {
+    display: inherit;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.form-submit {
+    width: 50%;
+    align-self: center;
+    margin: 1rem;
+}
 
 
 /* ============ */
