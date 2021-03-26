@@ -1,29 +1,27 @@
-<div class="">
-    <div class="">Login</div>
+<div class="container">
+    <h1>Login</h1>
 
-    <div class="">
-        <form action="/login" method="post">
+        <form action="/login" method="post" class="form">
 
-            <div class="">
-                <label for="username">Username</label>
-                <input name="username" class="" type="text" placeholder="Enter username">
+            <div class="form-pair">
+                <label for="username">Username: </label>
+                <input name="username" class="form-input" type="text" placeholder="Enter username">
             </div>
-            <div class="">
-                <label for="password">Password</label>
-                <input name="password" class="" type="password" placeholder="Password">
+            <div class="form-pair">
+                <label for="password">Password: </label>
+                <input name="password" class="form-input" type="password" placeholder="Password">
             </div>
-            <div class="">
+            {{!-- <div class="form-pair">
                 <div class="">
                     <label class="">
                         <input class="" type="checkbox"> Remember Password</label>
                 </div>
-            </div>
-            <button type="submit" class="">Login</button>
+            </div> --}}
+            <button type="submit" class="form-submit button">Login</button>
         </form>
-        <div class="">
+        <div class="container form">
             <a class="" href="/register">Register an Account</a>
             <a class="" href="forgot-password.html">Forgot Password?</a>
-            <a class="" href="/">Home Page?</a>
         </div>
-    </div>
+
 </div>

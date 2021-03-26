@@ -1,46 +1,44 @@
 
-<div class="">
-    <div class="">Register an Account</div>
-    <div class="">
-        <form action="/register" method="post">
-            <div class="">
-                <div class="">
-                    <div class="">
-                        <label for="firstName">First name</label>
-                        <input name="firstName" class="" type="text" placeholder="Enter first name" required>
-                    </div>
-                    <div class="">
-                        <label for="lastName">Last name</label>
-                        <input name="lastName" class="" type="text" placeholder="Enter last name" required>
-                    </div>
+<div class="container">
+    <h1>Register an Account</h1>
+    
+        <form action="/register" method="post" class="form">
+            
+            <div class="row">
+                <div class="form-pair">
+                    <label for="firstName">First name</label>
+                    <input name="firstName" class="form-input" type="text" placeholder="Enter first name" required>
+                </div>
+                <div class="form-pair">
+                    <label for="lastName">Last name</label>
+                    <input name="lastName" class="form-input" type="text" placeholder="Enter last name" required>
                 </div>
             </div>
-            <div class="">
-                <label for="username">Username</label>
-                <input name="username" class="" type="text" placeholder="Enter Username" required>
-            </div>
-            <div class="">
-                <label for="email">Email address</label>
-                <input name="email" class="" type="email" placeholder="Enter email" required>
-            </div>
-            <div class="">
-                <div class="">
-                    <div class="">
-                        <label for="password">Password</label>
-                        <input name="password" class="" type="password" placeholder="Password" required >
-                    </div>
-                    <div class="">
-                        <label for="passwordConfirm">Confirm password</label>
-                        <input name="passwordConfirm" class="" type="password" placeholder="Confirm password" required>
-                    </div>
+
+            <div class="col">
+                <div class="form-pair">
+                    <label for="email">Email address</label>
+                    <input name="email" class="form-input" type="email" placeholder="Enter email" required>
+                </div>
+                <div class="form-pair">
+                    <label for="username">Username</label>
+                    <input name="username" class="form-input" type="text" placeholder="Enter Username" required>
                 </div>
             </div>
-            <button type="submit" class="">Register</button>
+
+            <div class="row">
+                <div class="form-pair">
+                    <label for="password">Password</label>
+                    <input name="password" class="form-input" type="password" placeholder="Password" required >
+                </div>
+                <div class="form-pair">
+                    <label for="passwordConfirm">Confirm Password</label>
+                    <input name="passwordConfirm" class="form-input" type="password" placeholder="Confirm password" required>
+                </div>
+            </div>
+
+            <button type="submit" class="form-submit button">Register</button>
+
         </form>
-        <div class="">
-            <a class="" href="/login">Login Page</a>
-            <a class="" href="forgot-password.html">Forgot Password?</a>
-            <a class="" href="/">Home Page?</a>
-        </div>
-    </div>
+    
 </div>
