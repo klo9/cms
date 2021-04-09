@@ -2,8 +2,8 @@
     --font-family: ;
     --font-size: ;
     --font-bold: ;
-    --theme-light: ;
-    --theme-dark: ;
+    --theme-light: white;
+    --theme-dark: black;
     --theme-colour: ;
     --theme-bg-colour: ;
 }
@@ -30,8 +30,8 @@ body {
 .button {
     /* good for <a> too */
 
-    background-color: black;
-    color: white;
+    background-color: var(--theme-dark);
+    color: var(--theme-light);
     padding: 1rem;
     border: none;
 
@@ -79,7 +79,7 @@ ul a:hover {
 }
 
 .form-input {
-    background-color: white;
+    background-color: var(--theme-light);
     border: 1px solid lightgray;
     padding: 1rem;
 }
@@ -107,6 +107,7 @@ ul a:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .df-nav ul,
@@ -124,6 +125,17 @@ ul a:hover {
 
 .df-nav .icon {
     display: none;
+    padding: 1rem;
+}
+
+.df-nav .hamburger {
+    width: 20px;
+    height: 20px;
+    content: url(/images/icons/hamburger.svg);
+}
+
+.df-nav.responsive a:focus .hamburger {
+    content: url(/images/icons/close.svg);
 }
 
 @media screen and (max-width: 600px) {
@@ -144,14 +156,14 @@ ul a:hover {
     .df-nav.responsive ul {
         float: none;
         display: block;
-       text-align: left;
+        text-align: left;
     }
 }
 
 /* footer */
 
 footer a {
-    color: white;
+    color: var(--theme-light);
     text-decoration: none;
 }
 
@@ -160,8 +172,8 @@ footer a:hover {
 }
 
 .df-footer {
-    background-color: black;
-    color: white;
+    background-color: var(--theme-dark);
+    color: var(--theme-light);
 
     display: flex;
     flex-direction: column;
