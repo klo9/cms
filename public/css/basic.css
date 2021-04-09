@@ -126,6 +126,14 @@ ul a:hover {
     margin: auto;
 }
 
+.df-nav-logo {
+    margin-left: 0;
+}
+
+.df-nav ul {
+    margin-right: 0;
+}
+
 .df-nav li,
 .df-footer li {
     padding: 1rem;
@@ -189,7 +197,7 @@ footer a:hover {
     .df-nav.responsive {
         position: relative;
     }
-    
+
     .df-nav.responsive a.icon {
         z-index: 1;
     }
