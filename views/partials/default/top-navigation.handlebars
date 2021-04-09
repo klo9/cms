@@ -1,38 +1,40 @@
+<div class="container">
 <nav class="df-nav" id="df-nav">
-    <a class="df-nav-logo" href="/">CMS</a>
-    <ul>
-        <li>
-            <a href="/about">About</a>
-        </li>
-        <li>
-            <a href="/posts">Blog</a>
-        </li>
-        <li>
-            <a href="/contactus">Contact Us</a>
-        </li>
-    </ul>
-    <ul>
-        {{#if user}}
-        <li>
-            <a href="/admin">Admin</a>
-        </li>
-        <li>
-        <form action="/admin/logout" method="POST" class="">
-            <i class=""></i>
-            <button>Logout</button>
-        </form>
-        </li>
-        {{else}}
-        <li>
-            <a href="/login">Login</a>
-        </li>
-        <li>
-            <a href="/register">Register</a>
-        </li>
-        {{/if}}
-    </ul>
-    <a href="javascript:void(0);" class="icon" onclick="hamburger()">
-        <img class="hamburger" alt="Menu">
-    </a>
+        <a class="df-nav-logo" href="/">CMS</a>
+        <ul>
+            <li>
+                <a href="/about">About</a>
+            </li>
+            <li>
+                <a href="/posts">Blog</a>
+            </li>
+            <li>
+                <a href="/contactus">Contact Us</a>
+            </li>
+        {{!-- </ul>
+        <ul> --}}
+            {{#if user}}
+            <li>
+                <a href="/admin">Admin</a>
+            </li>
+            <li>
+            <form action="/admin/logout" method="POST" class="">
+                <i class=""></i>
+                <button>Logout</button>
+            </form>
+            </li>
+            {{else}}
+            <li>
+                <a href="/login">Login</a>
+            </li>
+            <li>
+                <a href="/register">Register</a>
+            </li>
+            {{/if}}
+        </ul>
+        <a href="javascript:void(0);" class="icon" onclick="hamburger()">
+            <img class="hamburger" alt="Menu">
+        </a>
     <script src="/js/hamburger.js"></script>
 </nav>
+</div>
