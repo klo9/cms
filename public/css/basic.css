@@ -1,6 +1,15 @@
+:root {
+    --font-family: ;
+    --font-size: ;
+    --font-bold: ;
+    --theme-light: ;
+    --theme-dark: ;
+    --theme-colour: ;
+    --theme-bg-colour: ;
+}
+
 body {
     margin: 0;
-    /* font-family: ; */
 }
 
 /* ==================== */
@@ -111,6 +120,32 @@ ul a:hover {
 .df-footer li {
     padding: 1rem;
     font-weight: 800;
+}
+
+.df-nav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .df-nav ul {display: none;}
+    .df-nav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .df-nav.responsive {position: relative;}
+    .df-nav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .df-nav.responsive ul {
+        float: none;
+        display: block;
+       text-align: left;
+    }
 }
 
 /* footer */
