@@ -1,33 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="/">Node CMS</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
-                {{#if user}}
-                <li class="nav-item">
-                    <a class="nav-link" href="/admin">Admin</a>
-                </li>
-                <li class="nav-item">
-                <form action="/admin/logout" method="POST" class="nav-link">
-                    <i class="fa fa-fw fa-sign-out"></i>
-                    <button>Logout</button>
-                </form>
-                </li>
-                {{else}}
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
-                </li>
-                {{/if}}
-            </ul>
-        </div>
-    </div>
+<div class="container">
+<nav class="df-nav" id="df-nav">
+        <a class="df-nav-logo" href="/">CMS</a>
+        <ul>
+            <li>
+                <a href="/about">About</a>
+            </li>
+            <li>
+                <a href="/posts">Blog</a>
+            </li>
+            <li>
+                <a href="/contactus">Contact Us</a>
+            </li>
+        {{!-- </ul>
+        <ul> --}}
+            {{#if user}}
+            <li>
+                <a href="/admin">Admin</a>
+            </li>
+            <li>
+            <form action="/admin/logout" method="POST" class="">
+                <i class=""></i>
+                <button>Logout</button>
+            </form>
+            </li>
+            {{else}}
+            <li>
+                <a href="/login">Login</a>
+            </li>
+            <li>
+                <a href="/register">Register</a>
+            </li>
+            {{/if}}
+        </ul>
+        <a href="javascript:void(0);" class="icon" onclick="hamburger()">
+            <img class="hamburger" alt="Menu">
+        </a>
+    <script src="/js/hamburger.js"></script>
 </nav>
+</div>

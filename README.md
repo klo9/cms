@@ -1,2 +1,2 @@
 # cms
-basic cms built with node, express, handlebars, and bootstrap
+basic decoupled cms built with node, express, and hbs

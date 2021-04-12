@@ -126,12 +126,12 @@ module.exports = {
     getCategories: (req, res) => {
 
         Category.find().lean().then(cats => {
-            res.render('admin/category/index', {categories: cats});
+            res.render('admin/category', {categories: cats});
         });
     },
 
     createCategories: (req, res) => {
-        var categoryName = req.body.name;
+        let categoryName = req.body.catName;
 
         if (categoryName) {
             const newCategory = new Category({
@@ -139,7 +139,8 @@ module.exports = {
             });
 
             newCategory.save().then(category => {
-                res.status(200).json(category);
+                req.flash('success-message', 'Category created successfully.');
+                res.redirect('/admin/category');
             });
         }
 
@@ -151,7 +152,7 @@ module.exports = {
         const cats = await Category.find().lean();
 
 
-        Category.findById(catId).then(cat => {
+        Category.findById(catId).lean().then(cat => {
 
             res.render('admin/category/edit', {category: cat, categories: cats});
 
@@ -159,17 +160,18 @@ module.exports = {
     },
 
 
-    editCategoriesPostRoute: (req, res) => {
+    editCategoriesPostRoute: async (req, res) => {
         const catId = req.params.id;
-        const newTitle = req.body.name;
+        const newTitle = req.body.catName;
 
         if (newTitle) {
-            Category.findById(catId).then(category => {
+            await Category.findById(catId).then(category => {
 
                 category.title = newTitle;
 
                 category.save().then(updated => {
-                    res.status(200).json({url: '/admin/category'});
+                    req.flash('success-message', 'Category created successfully.');
+                    res.redirect('/admin/category');
                 });
 
             });

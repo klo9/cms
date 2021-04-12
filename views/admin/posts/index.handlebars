@@ -1,11 +1,11 @@
-<div class="container">
-    <div class="alert alert-secondary text-center">
+<div class="">
+    <div class="">
         <h1>ALL POSTS</h1>    
     </div>
         
-    <table class="table table-bordered">
-        <thead class="bg-dark text-center">
-        <tr class="text-white">          
+    <table class="">
+        <thead class="">
+        <tr class="">          
             <th>Title</th>
             <th>Description</th>
             <th>Status</th>
@@ -15,7 +15,7 @@
             <th>Actions</th>
         </tr>
         </thead>
-        <tbody class="text-center">
+        <tbody class="">
         {{#each posts}}
             <tr>               
                 <td>{{title}}</td>
@@ -24,11 +24,11 @@
                 <td>{{urlPathConfig}}</td>
                 <td>{{allowComments}}</td>
                 <td>{{category.title}}</td>
-                <td class="d-flex">
-                    <a href="/admin/posts/edit/{{_id}}" class="btn btn-sm btn-warning mr-2">Edit Post</a>
+                <td class="">
+                    <a href="/admin/posts/edit/{{_id}}" class="">Edit Post</a>
 
                     <form action="/admin/posts/delete/{{_id}}?newMethod=DELETE" method="post">
-                        <button class="btn btn-sm btn-danger" type="submit">Delete Post</button>
+                        <button class="" type="submit">Delete Post</button>
                     </form>
                     
                     

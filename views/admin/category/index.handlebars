@@ -1,27 +1,27 @@
-<div class="container">
+<div class="">
 
 
-    <h3 class="alert alert-dark p-3 text-dark text-center">All Categories </h3>
+    <h3 class="">All Categories </h3>
 
 
-    <div class="row">
-        <div class="col-6 mx-auto">
-            <table class="table table-bordered text-center border-success text-white">
-                <thead class="bg-primary">
+    <div class="">
+        <div class="">
+            <table class="">
+                <thead class="">
                 <tr>
                     <th>Title</th>
                     <th>Action</th>
                 </tr>
                 </thead>
-                <tbody class="table-hover bg-dark category-list">
+                <tbody class="">
                 {{#each categories}}
                     <tr>
 
                         <td>{{title}}</td>
-                        <td class="d-flex justify-content-center">
-                            <a href="/admin/category/edit/{{_id}}" class="btn btn-sm btn-warning mr-2" role="button">Edit</a>
+                        <td class="">
+                            <a href="/admin/category/edit/{{_id}}" class="" role="button">Edit</a>
                             <form action="/admin/category/delete/{{_id}}?newMethod=DELETE" method="post">
-                                <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                                <button class="" type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>
@@ -34,14 +34,14 @@
 
     <hr>
 
-    <div class="row p-4">
-        <div class="col-md-8">
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" id="category-title" name="title" placeholder="Enter Title">
+    <div class="">
+        <form action="/admin/category/create" method="post" class="">
+                <div class="">
+                    <label for="catName">Title</label>
+                    <input type="text" class="" name="catName" placeholder="Enter category name">
                 </div>
-                    <button class="btn btn-outline-success btn-lg" id="create-category-button">Create Category</button>
-        </div>
+                    <button type="submit" class="">Create Category</button>
+        </form>
     </div>
 
 

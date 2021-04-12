@@ -50,7 +50,7 @@ router.route('/category/create')
 
 router.route('/category/edit/:id')
     .get(adminController.editCategoriesGetRoute)
-    .post(adminController.editCategoriesPostRoute);
+    .put(adminController.editCategoriesPostRoute);
 
 router.route('/category/delete/:id')
     .delete(adminController.deleteCategory);

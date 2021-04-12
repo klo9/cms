@@ -17,6 +17,10 @@ module.exports = {
     about: (req, res) => {
         res.render('default/about');
     },
+
+    contact: (req, res) => {
+        res.render('default/contact')
+    },
     
     loginGet: (req, res) => {
         res.render('default/login');

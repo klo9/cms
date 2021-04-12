@@ -33,6 +33,10 @@ router.route('/posts/:urlPathConfig')
 
 router.route('/about')
     .get(defaultController.about);
+
+router.route('/contactus')    
+    .get(defaultController.contact);
+    
 // policies routing
 
 router.route('/privacypolicy')

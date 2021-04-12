@@ -1,0 +1,230 @@
+:root {
+    --font-family: ;
+    --font-size: ;
+    --font-bold: ;
+    --theme-light: white;
+    --theme-dark: black;
+    --theme-colour: ;
+    --theme-bg-colour: ;
+}
+
+body {
+    margin: 0;
+}
+
+/* ==================== */
+/* universal components */
+/* ==================== */
+
+.container {
+    width: 65%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.spacer {
+    padding: 5rem;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.button {
+    /* good for <a> too */
+
+    background-color: var(--theme-dark);
+    color: var(--theme-light);
+    padding: 1rem;
+    border: none;
+
+    text-decoration: none;
+    font-size: 1rem;
+
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* lists */
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul a {
+    color: var(--theme-dark);
+    text-decoration: none;
+}
+
+ul a:hover {
+    color: gray;
+    text-decoration: underline;
+}
+
+/* forms */
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.form-input {
+    background-color: var(--theme-light);
+    border: 1px solid lightgray;
+    padding: 1rem;
+}
+
+.form-pair {
+    display: inherit;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.form-submit {
+    width: 50%;
+    align-self: center;
+    margin: 1rem;
+}
+
+
+/* ============ */
+/* default view */
+/* ============ */
+
+/* navigation */
+
+.df-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.df-nav ul,
+.df-nav-logo {
+    display: inherit;
+    flex-direction: inherit;
+    margin: auto;
+}
+
+.df-nav-logo {
+    margin-left: 0;
+}
+
+.df-nav ul {
+    margin-right: 0;
+}
+
+.df-nav li,
+.df-footer li {
+    padding: 1rem;
+    font-weight: 800;
+}
+
+.df-nav .icon {
+    display: none;
+    padding: 1rem;
+}
+
+.df-nav .hamburger {
+    width: 20px;
+    height: 20px;
+    content: url(/images/icons/hamburger.svg);
+}
+
+.df-nav.responsive a:focus .hamburger {
+    content: url(/images/icons/close.svg);
+}
+
+/* footer */
+
+footer a {
+    color: var(--theme-light);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: gray;
+}
+
+.df-footer {
+    background-color: var(--theme-dark);
+    color: var(--theme-light);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.df-footer-content {
+    display: inherit;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.df-footer-cr {
+    margin: auto;
+    padding: 2rem;
+}
+
+/* media queries */
+
+@media screen and (max-width: 700px) {
+    .df-nav ul {display: none;}
+    .df-nav a.icon {
+        float: right;
+        display: block;
+    }
+
+    .df-nav.responsive {
+        position: relative;
+    }
+
+    .df-nav.responsive a.icon {
+        z-index: 1;
+    }
+
+    .df-nav.responsive ul {
+        position: absolute;
+        right: 0;
+
+        float: none;
+        display: block;
+        text-align: left;
+
+        background-color: var(--theme-light);
+    }
+
+    .container {
+        width: 80%;
+        padding: 1rem;
+    }
+
+    .form {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .register .row {
+        flex-direction: column;
+    }
+}
